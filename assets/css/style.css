@@ -844,13 +844,14 @@ main {
 .download-cv {
   text-align: center;
   margin-top: 30px;
+  
 }
 
 .download-btn a {
   display: inline-block;
   padding: 10px 20px;
   background-color: var(--text-gradient-yellow);
-  color: var(--jet);
+  color: hsl(45, 100%, 72%);
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
@@ -1371,7 +1372,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 150px; }
+  .avatar-box img { width: 120px; }
 
   .info-content .name { margin-bottom: 15px; }
 
