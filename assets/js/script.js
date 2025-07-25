@@ -166,3 +166,175 @@ function showAppOptions() {
 function closeAppOptions() {
   document.getElementById("appOptionsModal").style.display = "none";
 }
+
+
+
+/*-----------------------------------*\
+  #DEMO MODAL FUNCTIONALITY
+\*-----------------------------------*/
+
+// Demo modal functionality for American Premium Water App
+// function openDemoModal() {
+//     const demoModal = document.getElementById('demoModal');
+//     if (demoModal) {
+//         demoModal.classList.add('active');
+//         document.body.style.overflow = 'hidden';
+//     }
+// }
+
+// function closeDemoModal() {
+//     const demoModal = document.getElementById('demoModal');
+//     if (demoModal) {
+//         demoModal.classList.remove('active');
+//         document.body.style.overflow = 'auto';
+        
+//         // Pause video when closing
+//         const video = document.getElementById('demoVideo');
+//         if (video) {
+//             video.pause();
+//         }
+//     }
+// }
+
+// function selectPlatform(platform) {
+//     const iosBtn = document.getElementById('iosBtn');
+//     const androidBtn = document.getElementById('androidBtn');
+//     const videoSource = document.getElementById('videoSource');
+//     const video = document.getElementById('demoVideo');
+    
+//     if (!iosBtn || !androidBtn || !videoSource || !video) return;
+    
+//     // Update button states
+//     iosBtn.classList.remove('active');
+//     androidBtn.classList.remove('active');
+    
+//     if (platform === 'ios') {
+//         iosBtn.classList.add('active');
+//         videoSource.src = './assets/videos/apws-ios-demo.mp4';
+//     } else if (platform === 'android') {
+//         androidBtn.classList.add('active');
+//         videoSource.src = './assets/videos/apws-android-demo.mp4';
+//     }
+    
+//     // Reload video with new source
+//     video.load();
+// }
+
+// // Initialize demo modal event listeners when DOM is loaded
+// document.addEventListener('DOMContentLoaded', function() {
+    
+//     // Close modal when clicking outside
+//     const demoModal = document.getElementById('demoModal');
+//     if (demoModal) {
+//         demoModal.addEventListener('click', function(e) {
+//             if (e.target === this) {
+//                 closeDemoModal();
+//             }
+//         });
+//     }
+    
+//     // Close modal with Escape key
+//     document.addEventListener('keydown', function(e) {
+//         if (e.key === 'Escape') {
+//             const demoModal = document.getElementById('demoModal');
+//             if (demoModal && demoModal.classList.contains('active')) {
+//                 closeDemoModal();
+//             }
+//         }
+//     });
+    
+// });
+
+
+
+// Updated JavaScript functions
+function openDemoModal(type) {
+    const modal = document.getElementById('demoModal');
+    const modalTitle = document.getElementById('demoModalTitle');
+    const platformSelector = document.getElementById('platformSelector');
+    const storeLinks = document.getElementById('storeLinks');
+    const webDemoLinks = document.getElementById('webDemoLinks');
+    const videoSource = document.getElementById('videoSource');
+    const demoVideo = document.getElementById('demoVideo');
+    
+    if (type === 'mobile') {
+        modalTitle.textContent = 'American Premium Water App Demo';
+        platformSelector.style.display = 'flex';
+        storeLinks.style.display = 'flex';
+        webDemoLinks.style.display = 'none';
+        
+        // Set default to iOS
+        videoSource.src = './assets/videos/apws-ios-demo.mp4';
+        selectPlatform('ios');
+    } else if (type === 'web') {
+        modalTitle.textContent = 'American Water Selfcare Web Demo';
+        platformSelector.style.display = 'none';
+        storeLinks.style.display = 'none';
+        webDemoLinks.style.display = 'block';
+        
+        // Set web demo video
+        videoSource.src = './assets/videos/flutter-web.mp4';
+        
+        // Adjust video styles for web demo (wider aspect ratio)
+        demoVideo.style.maxWidth = '100%';
+        demoVideo.style.width = '100%';
+        demoVideo.style.height = 'auto';
+        demoVideo.style.maxHeight = '400px';
+    }
+    
+    demoVideo.load(); // Reload video with new source
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDemoModal() {
+    const modal = document.getElementById('demoModal');
+    const demoVideo = document.getElementById('demoVideo');
+    
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    demoVideo.pause();
+    
+    // Reset video styles
+    demoVideo.style.maxWidth = '300px';
+    demoVideo.style.width = '100%';
+    demoVideo.style.height = '500px';
+}
+
+function selectPlatform(platform) {
+    const videoSource = document.getElementById('videoSource');
+    const demoVideo = document.getElementById('demoVideo');
+    const iosBtn = document.getElementById('iosBtn');
+    const androidBtn = document.getElementById('androidBtn');
+    
+    // Remove active class from all buttons
+    iosBtn.classList.remove('active');
+    androidBtn.classList.remove('active');
+    
+    if (platform === 'ios') {
+        videoSource.src = './assets/videos/apws-ios-demo.mp4';
+        iosBtn.classList.add('active');
+    } else if (platform === 'android') {
+        videoSource.src = './assets/videos/apws-android-demo.mp4';
+        androidBtn.classList.add('active');
+    }
+    
+    demoVideo.load();
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('demoModal');
+    const modalContent = modal.querySelector('.demo-modal');
+    
+    if (event.target === modal && !modalContent.contains(event.target)) {
+        closeDemoModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeDemoModal();
+    }
+});
