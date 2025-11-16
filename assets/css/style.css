@@ -486,6 +486,8 @@ main {
   max-width: calc(100% - 46px);
   width: calc(100% - 46px);
   flex: 1;
+  min-width: 0; /* Allows flex item to shrink below content size */
+  overflow: hidden; /* Prevents content from overflowing */
 }
 
 .contact-title {
@@ -503,11 +505,17 @@ main {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
+  max-width: 100%;
+  display: block;
 }
 
 .contact-info .contact-link {
   transition: var(--transition-1);
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  word-break: break-all; /* Break long email addresses */
+  overflow-wrap: anywhere; /* Break at any point if needed */
 }
 
 .contact-info .contact-link:hover {
@@ -2364,11 +2372,22 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .contacts-list { grid-template-columns: 1fr; }
+  
+  .contact-info {
+    max-width: calc(100% - 64px);
+    width: calc(100% - 64px);
+    min-width: 0;
+    overflow: hidden;
+  }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    display: block;
+    width: 100%;
   }
 
   .contact-info :is(.contact-link, time, address) {
