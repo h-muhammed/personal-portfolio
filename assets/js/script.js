@@ -280,6 +280,20 @@ function openDemoModal(type) {
         demoVideo.style.width = '100%';
         demoVideo.style.height = 'auto';
         demoVideo.style.maxHeight = '400px';
+    } else if (type === 'joozy') {
+        modalTitle.textContent = 'Business Card Reader with OCR Demo';
+        platformSelector.style.display = 'none';
+        storeLinks.style.display = 'none';
+        webDemoLinks.style.display = 'none';
+        
+        // Set joozy demo video
+        videoSource.src = './assets/videos/joozy-app.mp4';
+        
+        // Adjust video styles for joozy demo
+        demoVideo.style.maxWidth = '100%';
+        demoVideo.style.width = '100%';
+        demoVideo.style.height = 'auto';
+        demoVideo.style.maxHeight = '600px';
     }
     
     demoVideo.load(); // Reload video with new source
@@ -299,6 +313,7 @@ function closeDemoModal() {
     demoVideo.style.maxWidth = '300px';
     demoVideo.style.width = '100%';
     demoVideo.style.height = '500px';
+    demoVideo.style.maxHeight = 'none';
 }
 
 function selectPlatform(platform) {

@@ -44,7 +44,7 @@
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
           <figure class="avatar-box">
-            <img src="./assets/images/portfolio.JPG" alt="Hussain Muhammed" />
+            <img src="./assets/images/portfolio.png" alt="Hussain Muhammed" />
           </figure>
 
           <div class="info-content">
@@ -71,7 +71,7 @@
               <div class="contact-info">
                 <p class="contact-title">Email</p>
 
-                <a href="hmuhammed9771@gmail.com" class="contact-link"
+                <a href="mailto:hmuhammed9771@gmail.com" class="contact-link"
                   >hmuhammed9771@gmail.com</a
                 >
               </div>
@@ -708,6 +708,16 @@
                   >
                 </p>
               </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Business Card Reader with OCR
+                </h4>
+                <span>2024</span>
+                <p class="timeline-text">
+                  Python app using Google Vision API and SpaCy to extract and format data from business cards. Frontend in React and backend in Node.js.
+                </p>
+              </li>
             </ol>
           </section>
 
@@ -798,6 +808,7 @@
         <article class="portfolio" data-page="portfolio">
           <header>
             <h2 class="h2 article-title">Portfolio</h2>
+            <p class="article-subtitle">A collection of my recent projects showcasing skills in mobile and web development</p>
           </header>
 
           <section class="projects">
@@ -852,59 +863,121 @@
            <ul class="project-list">
   <!-- American Premium Water Mobile App -->
   <li class="project-item active project-item-demo" data-filter-item data-category="applications">
-    <div style="position: relative;">
+    <div class="project-card">
       <figure class="project-img">
         <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
+          <ion-icon name="play-circle-outline"></ion-icon>
         </div>
         <img src="./assets/images/myapws.PNG" alt="American Premium Water App" loading="lazy" />
       </figure>
       
       <!-- Demo Overlay -->
       <div class="demo-overlay" onclick="openDemoModal('mobile')">
-        <button class="demo-btn">View Demo</button>
+        <button class="demo-btn">
+          <ion-icon name="play-circle"></ion-icon>
+          View Demo
+        </button>
       </div>
       
-      <h3 class="project-title">American Premium Water</h3>
-      <p class="project-category">Mobile Application</p>
+      <div class="project-content">
+        <h3 class="project-title">American Premium Water</h3>
+        <p class="project-category">Mobile Application</p>
+        <p class="project-description">Cross-platform app for utility customers to view payment history, usage, and invoices.</p>
+        <div class="project-tech">
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">.NET Core</span>
+          <span class="tech-badge">Firebase</span>
+        </div>
+      </div>
     </div>
   </li>
 
   <!-- American Water Selfcare Web -->
   <li class="project-item active project-item-demo" data-filter-item data-category="web development">
-    <div style="position: relative;">
+    <div class="project-card">
       <figure class="project-img">
         <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
+          <ion-icon name="play-circle-outline"></ion-icon>
         </div>
         <img src="./website-demo-image/flutterweb.png" alt="American Water Selfcare" loading="lazy" />
       </figure>
       
       <!-- Demo Overlay -->
       <div class="demo-overlay" onclick="openDemoModal('web')">
-        <button class="demo-btn">View Demo</button>
+        <button class="demo-btn">
+          <ion-icon name="play-circle"></ion-icon>
+          View Demo
+        </button>
       </div>
       
-      <h3 class="project-title">American Water Selfcare</h3>
-      <p class="project-category">Web Development</p>
+      <div class="project-content">
+        <h3 class="project-title">American Water Selfcare</h3>
+        <p class="project-category">Web Development</p>
+        <p class="project-description">Responsive web application built with Flutter Web for utility management.</p>
+        <div class="project-tech">
+          <span class="tech-badge">Flutter Web</span>
+          <span class="tech-badge">.NET Core</span>
+          <span class="tech-badge">Azure</span>
+        </div>
+      </div>
     </div>
   </li>
 
-  <!-- Other existing projects... -->
-  <li class="project-item active" data-filter-item data-category="web development">
-    <a href="#">
+  <!-- Joozy - Business Card Reader with OCR -->
+  <li class="project-item active project-item-demo" data-filter-item data-category="applications">
+    <div class="project-card">
       <figure class="project-img">
         <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
+          <ion-icon name="play-circle-outline"></ion-icon>
         </div>
-        <img src="./assets/images/textile-mockups.png" alt="orizon" loading="lazy" />
+        <img src="./assets/images/project-1.jpg" alt="Business Card Reader with OCR" loading="lazy" />
       </figure>
-      <h3 class="project-title">Orizon</h3>
-      <p class="project-category">Web development</p>
-    </a>
+      
+      <!-- Demo Overlay -->
+      <div class="demo-overlay" onclick="openDemoModal('joozy')">
+        <button class="demo-btn">
+          <ion-icon name="play-circle"></ion-icon>
+          View Demo
+        </button>
+      </div>
+      
+      <div class="project-content">
+        <h3 class="project-title">Business Card Reader with OCR</h3>
+        <p class="project-category">Applications</p>
+        <p class="project-description">Python app using Google Vision API and SpaCy to extract and format data from business cards.</p>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Google Vision API</span>
+          <span class="tech-badge">React</span>
+        </div>
+      </div>
+    </div>
   </li>
 
-  <!-- Rest of your existing projects... -->
+  <!-- Textile Management System -->
+  <li class="project-item active" data-filter-item data-category="web development">
+    <div class="project-card">
+      <a href="https://github.com/yashodalasith/Textile-Management-System.git" target="_blank" class="project-link">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="code-outline"></ion-icon>
+          </div>
+          <img src="./assets/images/textile-mockups.png" alt="Textile Management System" loading="lazy" />
+        </figure>
+        
+        <div class="project-content">
+          <h3 class="project-title">Textile Management System</h3>
+          <p class="project-category">Web Development</p>
+          <p class="project-description">Web system with dynamic price updates, role-based access, and secure JWT authentication.</p>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">MongoDB</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </li>
 </ul>
 
 <!-- Updated Demo Modal -->
